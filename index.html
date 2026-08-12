@@ -59,7 +59,7 @@
         </div>
 
         <a
-          href="https://rzp.io/rzp/tyHC838"
+          href="#register"
           target="_blank"
           class="btn"
         >
@@ -185,7 +185,6 @@
 
         <h2>Meet Business Coach<br>
         <span class="gradient"> MIINAL PATIL</span></h2>
-
         <p>
           Miinal Patil helps business owners build systems,
           improve profitability, develop leadership,
@@ -199,7 +198,7 @@
         </p>
 
         <a
-          href="https://rzp.io/rzp/tyHC838"
+          href="#register"
           target="_blank"
           class="btn"
         >
@@ -244,34 +243,100 @@
   </section>
 
   <!-- Registration -->
-  <section class="register">
+  <section class="register" id="register">
+  <div class="container">
 
-    <div class="container">
-
+    <div class="form-header">
+      <div class="form-badge">Workshop registration</div>
       <h2 class="title">Reserve Your Seat Today</h2>
-
       <p class="desc">
-        Join the live online session on
-        <strong>26 August 2026</strong>.
+        Fill in your details to continue with the registration.
       </p>
-
-      <div class="price">₹299</div>
-
-      <a
-        href="https://rzp.io/rzp/tyHC838"
-        target="_blank"
-        class="btn"
-      >
-        Pay & Register Now
-      </a>
-
-      <p class="small-note">
-        Limited seats available for the live interactive session.
-      </p>
-
     </div>
 
-  </section>
+    <div class="form-card">
+
+      <form id="registrationForm" class="registration-form">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name"><span class="required">*</span> Full Name</label>
+            <input id="name" type="text" name="name" placeholder="Enter your full name" required />
+          </div>
+
+          <div class="form-group">
+           <label for="phone"><span class="required">*</span> Mobile Number</label>
+            <input id="phone" type="tel" name="phone" placeholder="Enter your mobile number" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input id="email" type="email" name="email" placeholder="Enter your email address" required />
+          </div>
+
+          <div class="form-group">
+            <label for="business">Business name</label>
+            <input id="business" type="text" name="business" placeholder="Enter your business name" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+           <label for="category"><span class="required">*</span> Business Category</label>
+            <select id="category" name="category" required>
+              <option value="">Select business category</option>
+              <option>Manufacturing</option>
+              <option>Trading</option>
+              <option>Retail</option>
+              <option>Service</option>
+              <option>Construction</option>
+              <option>Real Estate</option>
+              <option>Healthcare</option>
+              <option>Education</option>
+              <option>IT / Technology</option>
+              <option>Food & Beverage</option>
+              <option>Professional Services</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="turnover">Annual business turnover</label>
+            <select id="turnover" name="turnover" required>
+              <option value="">Select annual turnover</option>
+              <option>Below ₹25 Lakhs</option>
+              <option>₹25 Lakhs – ₹50 Lakhs</option>
+              <option>₹50 Lakhs – ₹1 Crore</option>
+              <option>₹1 Crore – ₹2 Crore</option>
+              <option>₹2 Crore – ₹5 Crore</option>
+              <option>₹5 Crore – ₹10 Crore</option>
+              <option>Above ₹10 Crore</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group full-width">
+            <label for="city">City</label>
+            <input id="city" type="text" name="city" placeholder="Enter your city" required />
+          </div>
+        </div>
+
+        <button type="submit" class="btn form-btn" id="submitBtn" disabled>
+        Continue to Payment ₹299
+        </button>
+
+      </form>
+    </div>
+
+    <p class="small-note">
+      Your information is secure and will only be used for workshop registration.
+    </p>
+
+  </div>
+</section>
 
   <!-- FAQ -->
   <section class="section">
@@ -329,7 +394,7 @@
 
   <!-- Sticky CTA -->
   <a
-    href="https://rzp.io/rzp/tyHC838"
+    href="#register"
     target="_blank"
     class="btn sticky-btn"
   >
