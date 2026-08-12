@@ -32,6 +32,7 @@ body{
   color: var(--text-color);
   background-color: var(--bg-color);
   margin: 0px 5px;
+  padding-bottom: 100px;
 }
 
 body::before{
@@ -406,15 +407,18 @@ footer{
   text-align:center;
   color:var(--muted);
   border-top:1px solid var(--border);
+  padding-bottom: 120px;
 }
 
 /* Sticky button */
 
-.sticky-btn{
-  position:fixed;
-  bottom:18px;
-  right:18px;
-  z-index:999;
+
+.sticky-btn {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 9999;
 }
 
 /* Responsive */
@@ -560,5 +564,8 @@ footer{
   .time span{
     font-size:22px;
   }
+.register{
+  padding:75px 0;
+}
 
 }
