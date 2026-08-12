@@ -165,3 +165,54 @@ if (footer) {
     new Date().getFullYear() +
     ' Multimanttra Solutions | Business Coach Miinal Patil';
 }
+const form = document.getElementById('registrationForm');
+
+if (form) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch(
+      'https://script.google.com/macros/s/AKfycbwAl4qzDNlgFPQNzxugQYAyVfixL_Y_JbDtGLHd3FIgbxQ-UK99sOrJFGJlqmk0yA0/exec',
+      {
+        method: 'POST',
+        body: formData
+      }
+    )
+      .then(() => {
+        window.location.href = 'https://rzp.io/rzp/tyHC838';
+      })
+      .catch((error) => {
+        alert('Unable to submit the form. Please try again.');
+        console.error(error);
+      });
+  });
+}
+const nameInput = document.getElementById('name');
+const phoneInput = document.getElementById('phone');
+const categorySelect = document.getElementById('category');
+const submitBtn = document.getElementById('submitBtn');
+
+function validateForm() {
+  const name = nameInput.value.trim();
+  const phone = phoneInput.value.trim();
+  const category = categorySelect.value;
+
+  // Mobile number must be exactly 10 digits
+  const phoneValid = /^[6-9]\d{9}$/.test(phone);
+
+  if (name !== '' && phoneValid && category !== '') {
+    submitBtn.disabled = false;
+    submitBtn.classList.add('enabled');
+  } else {
+    submitBtn.disabled = true;
+    submitBtn.classList.remove('enabled');
+  }
+}
+
+nameInput.addEventListener('input', validateForm);
+phoneInput.addEventListener('input', validateForm);
+categorySelect.addEventListener('change', validateForm);
+
+validateForm();
