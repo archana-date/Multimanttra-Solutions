@@ -8,6 +8,9 @@
   --accent:#e63946;
   --accent-2:#ff6b6b;
   --shadow:0 20px 60px rgba(0,0,0,.12);
+  --text-color: #000000;
+  --heading-color: #000000;
+  --bg-color: #ffffff;
 }
 
 *{
@@ -26,6 +29,9 @@ body{
   color:var(--text);
   line-height:1.6;
   transition:background .35s ease,color .35s ease;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  margin: 0px 5px;
 }
 
 body::before{
@@ -43,6 +49,7 @@ body::before{
   width:90%;
   max-width:1200px;
   margin:0 auto;
+  
 }
 
 /* Light mode */
@@ -57,6 +64,9 @@ body.dark-mode{
   --accent:#ff3b3b;
   --accent-2:#ff6b6b;
   --shadow:0 20px 60px rgba(0,0,0,.35);
+  --text-color: #ffffff;
+  --heading-color: #ffffff;
+  --bg-color: #121212;
 }
 
 /* Theme toggle */
@@ -242,7 +252,7 @@ body.dark-mode{
 /* Sections */
 
 .section{
-  padding:100px 0;
+  padding:70px 0;
 }
 
 .title{
@@ -418,6 +428,7 @@ footer{
   }
 
   .hero{
+    padding:20px 0 20px;
     text-align:center;
   }
 
@@ -443,11 +454,13 @@ footer{
 @media (max-width: 768px){
 
   .container{
-    width:92%;
+   
+    width:90%;
+    padding: 30px 0;
   }
 
   .hero{
-    padding:90px 0 60px;
+    padding:20px 0 20px;
     min-height:auto;
   }
 
@@ -502,16 +515,12 @@ footer{
   }
 
   .section{
-   background-image: url(''); /* path to your image */
-    background-size: cover;       /* covers the entire section */
-    background-position: center;  /* centers the image */
-    background-repeat: no-repeat; /* prevents repeating */
-    
-    min-height: 100vh;            /* full screen height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+   background-image: url('your-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 30px 0;
+  color: var(--text-color)
 }
 
 .register{
@@ -521,6 +530,11 @@ footer{
 
 @media (max-width: 480px){
 
+   .container{
+    width:90%;
+    padding:15px 5px;
+  }
+  
   .hero h1{
     font-size:32px;
   }
@@ -546,4 +560,5 @@ footer{
   .time span{
     font-size:22px;
   }
+
 }
