@@ -181,7 +181,7 @@ if (form) {
       }
     )
       .then(() => {
-        window.location.href = 'https://rzp.io/rzp/tyHC838';
+        window.location.href = 'https://rzp.io/rzp/1oAy8Vy';
       })
       .catch((error) => {
         alert('Unable to submit the form. Please try again.');
