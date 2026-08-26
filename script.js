@@ -29,7 +29,7 @@ if (themeSwitch) {
 // Event: 26 August 2026 - 9:30 AM
 // ======================================
 
-const targetDate = new Date('2026-08-26T09:30:00').getTime();
+const targetDate = new Date('2026-09-02T09:30:00').getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
