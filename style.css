@@ -185,7 +185,7 @@ body.dark-mode {
 }
 
 .hero h1 {
-  font-size: 64px;
+  font-size: 54px;
   line-height: 1.05;
   font-weight: 800;
   letter-spacing: -2px;
@@ -193,6 +193,7 @@ body.dark-mode {
 }
 
 .gradient {
+   font-size: 50px;
   background: linear-gradient(
     90deg,
     var(--accent),
@@ -268,13 +269,13 @@ body.dark-mode {
 
 .info-card h3 {
   color: var(--accent);
-  font-size: 25px;
+  font-size: 20px;
   margin-bottom: 1px;
 }
 
 .info-card p {
   font-family: "Inter", sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--text);
 }
