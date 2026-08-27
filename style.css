@@ -556,6 +556,14 @@ body.dark-mode {
   padding: 70px 20px;
   background: #f8f9fc;
 }
+.video-testimonials h2 {
+  text-align: center;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.12;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
 
 .video-carousel {
   display: flex;
