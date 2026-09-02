@@ -26,10 +26,10 @@ if (themeSwitch) {
 
 // ======================================
 // Countdown Timer
-// Event: 26 August 2026 - 9:30 AM
+// Event: 7 September 2026 - 9:30 AM
 // ======================================
 
-const targetDate = new Date('2026-09-02T09:30:00').getTime();
+const targetDate = new Date('2026-09-07T09:30:00').getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
