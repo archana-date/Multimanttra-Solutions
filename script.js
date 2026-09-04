@@ -249,38 +249,78 @@ if (form) {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
+    // Get form values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const category = document.getElementById('business_category').value.trim();
+
+    // Create Google Sheet form data
     const formData = new FormData(form);
 
+    // Razorpay Payment Page
+    const razorpayUrl = new URL(
+      'https://pages.razorpay.com/pl_TR88C58t8sfC8n/view'
+    );
+
+    // Razorpay prefill parameters
+    razorpayUrl.searchParams.set('full_name', name);
+    razorpayUrl.searchParams.set('email', email);
+    razorpayUrl.searchParams.set('phone', phone);
+
+    // Business Category
+    razorpayUrl.searchParams.set(
+      'business_category',
+      category
+    );
+
+    // Show processing message
+    const submitBtn = document.getElementById('submitBtn');
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Processing...';
+    }
+
+    // Save data to Google Sheet
     fetch(
-      'https://script.google.com/macros/s/AKfycbwAl4qzDNlgFPQNzxugQYAyVfixL_Y_JbDtGLHd3FIgbxQ-UK99sOrJFGJlqmk0yA0/exec',
+      'https://script.google.com/macros/s/AKfycby7atbnveQRq49CewnZXRodeZSH4WuuWwcpHu_UORdZ9gXzgukj87kPeYo7FYKKdw8/exec',
       {
         method: 'POST',
         body: formData
       }
     )
       .then(() => {
-        window.location.href = 'https://rzp.io/rzp/1oAy8Vy';
+
+        // Redirect to Razorpay
+        window.location.href = razorpayUrl.toString();
+
       })
       .catch((error) => {
-        alert('Unable to submit the form. Please try again.');
-        console.error(error);
+
+        console.error('Google Sheet Error:', error);
+
+        // Still redirect to Razorpay
+        // so customer is not stuck on the registration page
+        window.location.href = razorpayUrl.toString();
+
       });
   });
 }
 const nameInput = document.getElementById('name');
 const phoneInput = document.getElementById('phone');
-const categorySelect = document.getElementById('category');
+const categorySelect = document.getElementById('business_category');
 const submitBtn = document.getElementById('submitBtn');
 
 function validateForm() {
   const name = nameInput.value.trim();
   const phone = phoneInput.value.trim();
-  const category = categorySelect.value;
+  const businessCategory = categorySelect.value;
 
   // Mobile number must be exactly 10 digits
   const phoneValid = /^[6-9]\d{9}$/.test(phone);
 
-  if (name !== '' && phoneValid && category !== '') {
+  if (name !== '' && phoneValid && businessCategory !== '') {
     submitBtn.disabled = false;
     submitBtn.classList.add('enabled');
   } else {
