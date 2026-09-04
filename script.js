@@ -152,7 +152,85 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+/* =========================================
+   IMPACT NUMBER COUNTER
+========================================= */
 
+document.addEventListener("DOMContentLoaded", function () {
+
+  const impactNumbers = document.querySelectorAll(".impact-number");
+
+  if (!impactNumbers.length) return;
+
+  const animateCounter = (element) => {
+
+    const target = Number(element.dataset.target);
+    const duration = 1800;
+
+    let startTime = null;
+
+    const updateCounter = (currentTime) => {
+
+      if (!startTime) {
+        startTime = currentTime;
+      }
+
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Smooth ease-out animation
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+
+      const currentValue = Math.floor(easeOut * target);
+
+      element.textContent = currentValue.toLocaleString();
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        element.textContent = target.toLocaleString();
+      }
+    };
+
+    requestAnimationFrame(updateCounter);
+  };
+
+
+  const impactObserver = new IntersectionObserver(
+    (entries, observer) => {
+
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+          const number = entry.target;
+
+          // Prevent animation from running again
+          if (number.dataset.animated === "true") {
+            return;
+          }
+
+          number.dataset.animated = "true";
+
+          animateCounter(number);
+
+          observer.unobserve(number);
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.4
+    }
+  );
+
+
+  impactNumbers.forEach((number) => {
+    impactObserver.observe(number);
+  });
+
+});
 // ======================================
 // Dynamic Footer Year (Optional)
 // ======================================
