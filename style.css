@@ -193,7 +193,6 @@ body.dark-mode {
 }
 
 .gradient {
-   font-size: 50px;
   background: linear-gradient(
     90deg,
     var(--accent),
