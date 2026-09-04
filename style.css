@@ -193,6 +193,7 @@ body.dark-mode {
 }
 
 .gradient {
+
   background: linear-gradient(
     90deg,
     var(--accent),
@@ -553,7 +554,7 @@ body.dark-mode {
 
 .video-testimonials {
   padding: 70px 20px;
-  background: #f8f9fc;
+  background: var(--bg-color);
 }
 
 .video-testimonials h2 {
@@ -1310,8 +1311,9 @@ body.dark-mode .impact-card:hover {
 
 .transformation-section {
   padding: 80px 20px 70px;
-  background: #ffffff;
+  background: var(--bg-color);
   overflow: hidden;
+  color: var(--heading-color);
 }
 
 .transformation-container {
@@ -1346,8 +1348,7 @@ body.dark-mode .impact-card:hover {
   font-size: clamp(38px, 4vw, 56px);
   line-height: 1.08;
   font-weight: 800;
-
-  color: #0d0d0d;
+color: var(--heading-color)
 }
 
 .transformation-header h2 span {
@@ -1644,7 +1645,7 @@ body.dark-mode .impact-card:hover {
 }
 .fit-section {
     padding: 70px 20px;
-    background: #ffffff;
+    background: var(--bg-color);
 }
 
 .fit-section .container {
@@ -1890,13 +1891,13 @@ body.dark-mode .impact-card:hover {
   border-radius: 20px;
 }
 /* =========================================================
-   SUCCESS STORIES
+   SUCCESS STORIES  
 ========================================================= */
 
 .success-stories {
   width: 100%;
   padding: 50px 20px 50px;
-  background: #ffffff;
+  background: var(--bg-color);
 }
 
 .success-stories-container {
@@ -1933,7 +1934,7 @@ body.dark-mode .impact-card:hover {
   line-height: 1.05;
   font-weight: 700;
 
-  color: #171717;
+  color: var(--heading-color);
 }
 
 .success-stories-header h2 span {
@@ -1969,7 +1970,7 @@ body.dark-mode .impact-card:hover {
 .success-card {
   position: relative;
 
-  margin-top: 65px;
+  margin-top: 30px;
 
   min-height: 430px;
 
